@@ -1,0 +1,30 @@
+<span ng-switch="typeof(subject)">
+  <ul ng-switch-when="object" class="list">
+    <li ng-repeat="(key, value) in subject" class="list-item" ng-hide="typeof(key) === 'string' && typeof(value) === 'string' && (key + value).indexOf(view.searchJson) === -1">
+      <a class="remove-btn fa fa-minus-circle"></a>
+      <span class="bold json-key">{{key}}</span>
+      <span ng-include="'recurse.tpl.html'" ng-init="setupRecursiveScope(this)"></span>
+    </li>
+    <div>
+      <a class="add-btn fa fa-plus-circle"></a>
+    </div>
+  </ul>
+  <ul ng-switch-when="array" class="list">
+    <li class="list-item" ng-repeat="value in subject" ng-init="setupRecursiveScope(this, 'array')" ng-hide="typeof(value) === 'string' && value.indexOf(view.searchJson) === -1">
+      <a class="remove-btn fa fa-minus-circle"></a>
+      <span ng-include="'recurse.tpl.html'"></span>
+    </li>
+    <div>
+      <a class="add-btn fa fa-plus-circle"></a>
+    </div>
+  </ul>
+  <span ng-switch-when="boolean">
+    <input class="json-value" type="checkbox" ng-model="parent[path]">
+  </span>
+  <span ng-switch-when="string">
+    <input class="json-value" type="text" ng-model="parent[path]">
+  </span>
+  <span ng-switch-when="number">
+    <input class="json-value" type="number" ng-model="parent[path]">
+  </span>
+</span>

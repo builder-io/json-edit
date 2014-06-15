@@ -1,0 +1,34 @@
+{
+  "name": "json-edit",
+  "version": "0.0.0",
+  "description": "Visual JSON and CSON editor",
+  "main": "./lib/main",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:builder-io/json-edit.git"
+  },
+  "keywords": [
+    "build",
+    "json",
+    "cson",
+    "edit",
+    "gui"
+  ],
+  "author": "Steve Sewell",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/builder-io/json-edit/issues"
+  },
+  "homepage": "https://github.com/builder-io/json-edit",
+  "dependencies": {
+    "angular": "^1.2.16",
+    "fs-extra": "^0.9.1",
+    "glob": "^4.0.2",
+    "lodash": "^2.4.1",
+    "season": "^2.0.0",
+    "underscore.string": "^2.3.3"
+  }
+}
