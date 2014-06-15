@@ -1,5 +1,5 @@
 <div ng-controller="EditViewCtrl">
-  <input ng-model="view.searchJson" class="form-control search-json-input">
+  <input placeholder="Search..." ng-model="view.searchJson" class="form-control search-json-input">
 
   <div ng-init="subject = json" ng-include="'recurse.tpl.html'">
   </div>
